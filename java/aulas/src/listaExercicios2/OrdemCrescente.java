@@ -39,7 +39,9 @@ public class OrdemCrescente {
 		{
 			System.out.println("A ordem crescente é: " + c + " " + b + " " + a);
 		}
-		System.out.println("Fim de programa!!");		
+		System.out.println("Fim de programa!!");	
+		
+		ler.close();
 		
 	}
 }
