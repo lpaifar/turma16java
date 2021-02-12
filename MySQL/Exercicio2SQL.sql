@@ -1,32 +1,34 @@
-create database db_exercicio3;
+create database db_exercicio2; 
 
-use db_exercicio3;
+use db_exercicio2;
 
-create table tb_alunos(
-id bigint auto_increment,
-numero_matricula int,
-nome varchar(255),
-idade int,
-sala int,
-nota float,
+create table produtos(
+id bigint (5) auto_increment,
+tipo varchar (30) not null,
+nome varchar (30),
+marca varchar (10),
+preço decimal (5,2),
+cor varchar (20),
 primary key (id)
 );
 
-select * from tb_alunos;
-
-insert into tb_alunos (numero_matricula, nome, idade, sala, nota) value (123, "Lucas", 14, 12, 8.5);
-insert into tb_alunos (numero_matricula, nome, idade, sala, nota) value (456, "Ana", 13, 11, 6.5);
-insert into tb_alunos (numero_matricula, nome, idade, sala, nota) value (789, "Felipe", 15, 13, 6.0);
-insert into tb_alunos (numero_matricula, nome, idade, sala, nota) value (987, "Paola", 13, 11, 3.0);
-insert into tb_alunos (numero_matricula, nome, idade, sala, nota) value (654, "Mayara", 17, 15, 5.0);
-insert into tb_alunos (numero_matricula, nome, idade, sala, nota) value (321, "Candido", 14, 12, 6.0);
-insert into tb_alunos (numero_matricula, nome, idade, sala, nota) value (159, "Maraia", 15, 13, 9.0);
-insert into tb_alunos (numero_matricula, nome, idade, sala, nota) value (951, "Jean", 13, 11, 10.0);
+select * from produtos;
 
 
-select * from tb_alunos where nota > 7;
-select * from tb_alunos where nota <= 7;
+insert into produtos (tipo, nome, marca, preço, cor) values ("Camiseta","Comum","ChicoRei",49.90, "Preta");
+insert into produtos (tipo, nome, marca, preço, cor) values ("Camiseta","Regata","Nike",69.90, "Branca");
+insert into produtos (tipo, nome, marca, preço, cor) values ("Camiseta","Manga comprida","Nike",99.90, "Estampada");
+insert into produtos (tipo, nome, marca, preço, cor) values ("Camiseta","Regata","Adidas",109.90, "Estampada");
+insert into produtos (tipo, nome, marca, preço, cor) values ("Camiseta","Regata","Pernambucanas",29.90, "Estampada");
+insert into produtos (tipo, nome, marca, preço, cor) values ("Camiseta","Comum","Nike",89.90, "Preta");
+insert into produtos (tipo, nome, marca, preço, cor) values ("Camiseta","Comum","Vans",69.99, "Preta");
+insert into produtos (tipo, nome, marca, preço, cor) values ("Camiseta","Comum","Vans",69.90, "Laranja");
 
+select * from produtos
+where preço >= 500;
 
-update tb_alunos set nota = 6.2 where id = 3;
+select * from produtos
+where preço < 500;
 
+update produtos set nome = "Regata"
+where id = 3;
